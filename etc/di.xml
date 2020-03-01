@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sfblaauw\OrderReview\Api\ReviewRepositoryInterface" type="Sfblaauw\OrderReview\Model\ReviewRepository" />
+    <preference for="Sfblaauw\OrderReview\Api\Data\ReviewInterface" type="Sfblaauw\OrderReview\Model\Review" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="order_review_listing_data_source" xsi:type="string">Sfblaauw\OrderReview\Model\ResourceModel\Review\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Sfblaauw\OrderReview\Model\ResourceModel\Review\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sfblaauw_order_review</argument>
+            <argument name="resourceModel" xsi:type="string">Sfblaauw\OrderReview\Model\ResourceModel\Review</argument>
+        </arguments>
+    </virtualType>
+</config>

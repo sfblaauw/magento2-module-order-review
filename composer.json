@@ -1,0 +1,22 @@
+{
+	"name": "sfblaauw/magento2-module-order-review",
+  	"description": "Magento 2 Order Review Module",
+  	"type": "magento2-module",
+  	"version": "1.0.0",
+  	"license": "OSL-3.0",
+  	"require": {
+		"php": "~7.1.3|~7.2.0|~7.3.0"
+	},
+  	"autoload": {
+    	"files": ["registration.php"],
+    	"psr-4": {
+      		"Sfblaauw\\OrderReview\\": ""
+    	}
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

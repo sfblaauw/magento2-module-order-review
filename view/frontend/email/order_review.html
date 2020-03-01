@@ -1,0 +1,6 @@
+<!--@subject Please review your order @-->
+{{template config_path="design/email/header_template"}}
+
+{{trans 'Please go to <a href="%orderReviewUrl">%orderReviewUrl</a> to review your order.' orderReviewUrl=$orderReviewUrl |raw}}.
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sfblaauw_OrderReview::order_review" title="Reviews" translate="title" module="Sfblaauw_OrderReview" sortOrder="80" parent="Magento_Sales::sales_operation" resource="Sfblaauw_OrderReview::order_review" action="orderreview/review" />
+    </menu>
+</config>

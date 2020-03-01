@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="sfblaauw_order_review_template" label="Order Review" file="order_review.html" type="text" module="Sfblaauw_OrderReview" area="frontend" />
+</config>

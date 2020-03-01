@@ -1,0 +1,31 @@
+<?php
+/** @var \Magento\Sales\Model\Order */
+$order = $this->getOrder();
+$selectRowBuilder = function ($name, $label) {
+    ob_start();
+    ?>
+    <div>
+        <label for="<?= $name ?>"><?= $label ?></label>
+        <select id="<?= $name ?>" name="<?= $name ?>" required>
+            <?php for ($i = 0; $i <= 5; $i++) : ?>
+                <option value="<?= $i ?>"><?= $i ?></option>
+            <?php endfor ?>
+        </select>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+?>
+
+<h1>Review order #<?= $order->getIncrementId() ?> </h1>
+
+<form action="<?= $block->getSaveUrl() ?>" method="post">
+    <?= $selectRowBuilder('delivery', __('Delivery')) ?>
+    <?= $selectRowBuilder('product', __('Product')) ?>
+    <?= $selectRowBuilder('customer_service', __('Customer Service')) ?>
+    <div>
+        <label for="comment>"><?= __('Comment') ?></label>
+        <textarea id="comment>" name="comment"></textarea>
+    </div>
+    <button type="submit"><?= __('Save') ?></button>
+</form>

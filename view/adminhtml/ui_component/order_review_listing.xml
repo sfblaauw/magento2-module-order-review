@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">order_review_listing.order_review_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>review_columns</spinner>
+        <deps>
+            <dep>order_review_listing.order_review_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="order_review_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render" />
+        </settings>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="order_review_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks" />
+        <columnsControls name="columns_controls" />
+        <filters name="listing_filters" />
+        <paging name="listing_paging" />
+    </listingToolbar>
+    <columns name="review_columns">
+        <column name="order_id" sortOrder="10">
+            <settings>
+                <label translate="true">Order ID</label>
+            </settings>
+        </column>
+        <column name="delivery" sortOrder="20">
+            <settings>
+                <label translate="true">Delivery</label>
+            </settings>
+        </column>
+        <column name="product" sortOrder="30">
+            <settings>
+                <label translate="true">product</label>
+            </settings>
+        </column>
+        <column name="customer_service" sortOrder="40">
+            <settings>
+                <label translate="true">Customer Service</label>
+            </settings>
+        </column>
+        <column name="comment" sortOrder="50">
+            <settings>
+                <label translate="true">Comment</label>
+            </settings>
+        </column>
+        <column name="status" sortOrder="60">
+            <settings>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
